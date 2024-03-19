@@ -1,0 +1,66 @@
+#HOOKS 
+hooks are added in react v16.8 
+- hooks are functions that allowS you to use state, lifecycle methods, and other React features in functional components.
+-Before hooks, functional components were stateless
+Rules==>
+   -hooks are only called / used within functional component at top level
+   - hooks can not be conditional
+
+   1.useState() ==> 
+       - allows functional components to manage state. 
+       - used to define state & update that state
+       - it returns an array with two elements 
+       - first ele is current value and second ele is function to update that state
+
+         syntax :  const[state,setState] = useState(initialValue)
+
+
+   2.useEffect()==>
+   3.useRef() ==>
+         - used to create mutable obj
+         - used to access DOM 
+         - doesn't trigger re-renders 
+         syntax :    const yourRefName = useRef(initialValue);
+        
+   4.useContext()
+   5.useReducer()
+   6.useCallback()
+   7.useMemo()
+
+   #customHooks
+
+
+
+
+   Props drilling ==> also known as component chaining / props passing
+     - is the process of passing the data from parent component to its deeply nested child through the series of intermediary components
+
+    <Parent>
+        <Child>
+          <GrandChild>
+            <SubGrandChild/>   
+         </GrandChild>
+     </Child>
+   </Parent>
+
+#drawbacks==>
+-code becomes complex , less readable
+-unnecessary data passing
+-harder to understand
+-harder to maintain the code
+
+
+
+#Context API==>
+- it provides a easy way to pass the data 
+- it avoids passing props manually to each level of nested component
+ 
+ it consist mainly two parts 
+ 1.Provider :
+       -used to wrap our component and makes the data available to its child components
+       -it accepts VALUE Props which holds the data that we want to share
+
+2.Consumer (class component):
+       - used within any component that need to access data provided by Provider    
+       - allows accessing the context using a render prop, while the useContext hook (used in functional components) provides a way to consume context values more directly.
+
